@@ -1,16 +1,16 @@
 # Original credit: https://github.com/kylemanna/docker-openvpn
-FROM alpine:3.19.1
+FROM alpine:3.20.2
 
 LABEL maintainer="Kyle Manna <kyle@kylemanna.com>"
 
-ARG OVPN_VERSION=2.6.8-r0
+ARG OVPN_VERSION=2.6.11-r0
 
 # Testing: pamtester
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories && \
     apk add --update --no-cache \
     openvpn=${OVPN_VERSION} \
     iptables=1.8.10-r3 \
-    bash=5.2.21-r0 \
+    bash=5.2.26-r0 \
     easy-rsa=3.1.7-r0 \
     openvpn-auth-pam=${OVPN_VERSION} \
     google-authenticator=1.09-r2\
